@@ -13,7 +13,6 @@
     "scripts": {
         "test": "xo && mocha",
         "ESM": "mocha",
-        "ESM2": "",
         "CJS": "xo && mocha"
     },
     "files": [
