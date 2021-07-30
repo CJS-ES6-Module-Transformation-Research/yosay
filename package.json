@@ -10,10 +10,17 @@
     "engines": {
         "node": ">=4"
     },
+    "main": "index.js",
     "scripts": {
         "test": "xo && mocha",
         "ESM": "mocha",
-        "CJS": "mocha"
+        "CJS": "mocha",
+        "rollup": "NODE_ENV=default rollup -c configs/rollup.config.js",
+        "rollup:preprocessed": "NODE_ENV=preprocessed rollup -c configs/rollup.config.js",
+        "rollup:transformed": "NODE_ENV=transformed rollup -c configs/rollup.config.js",
+        "webpack": "NODE_ENV=default webpack -c configs/webpack.config.js",
+        "webpack:preprocessed": "NODE_ENV=preprocessed webpack -c configs/webpack.config.js",
+        "webpack:transformed": "NODE_ENV=transformed webpack -c configs/webpack.config.js"
     },
     "files": [
         "index.js",
@@ -42,7 +49,14 @@
         "wrap-ansi": "^6.0.0"
     },
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^20.0.0",
+        "@rollup/plugin-node-resolve": "^13.0.4",
         "mocha": "^6.2.0",
+        "rollup": "^2.55.1",
+        "webpack": "^4.46.0",
+        "webpack-bundle-analyzer": "^4.4.2",
+        "webpack-cli": "^4.7.2",
+        "webpack-node-externals": "^3.0.0",
         "xo": "^0.24.0"
     },
     "xo": {
