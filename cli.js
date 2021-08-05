@@ -1,15 +1,13 @@
-#!/usr/bin/env node
-'use strict';
 const pkg = require('./package.json');
-const yosay = require('.');
-
-require('taketalk')({
-  init(input, options) {
-    console.log(yosay(input, options));
-  },
-  help() {
-    console.log(`
-  ${pkg.description}
+const yosay = require('./index.js');
+var _taketalk = require('taketalk');
+_taketalk({
+    init(input, options) {
+        console.log(yosay(input, options));
+    },
+    help() {
+        console.log(`
+  ${ pkg.description }
 
   Usage
     $ yosay <string>
@@ -18,7 +16,7 @@ require('taketalk')({
 
   Example
     $ yosay 'Sindre is a horse'
-    ${yosay('Sindre is a horse')}`);
-  },
-  version: pkg.version
+    ${ yosay('Sindre is a horse') }`);
+    },
+    version: pkg.version
 });
