@@ -1,10 +1,16 @@
-const assert = require('assert');
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
-const yosay = require('../index.js');
-const getFixturePath = testName => path.join(__dirname, 'fixture', `${ testName }.json`);
-const getAssertResult = (testName, expected, done) => fs.readFile(getFixturePath(testName), (err, data) => {
+import assert from 'assert';
+import { readFile } from 'fs';
+import {
+    dirname,
+    join
+} from 'path';
+import chalk from 'chalk';
+import yosay from '../index.js';
+import { fileURLToPath } from 'url';
+var __filename = fileURLToPath(import.meta.url);
+var __dirname = dirname(__filename);
+const getFixturePath = testName => join(__dirname, 'fixture', `${ testName }.json`);
+const getAssertResult = (testName, expected, done) => readFile(getFixturePath(testName), (err, data) => {
     assert.ifError(err);
     assert.strict.equal(JSON.parse(data), expected);
     done();

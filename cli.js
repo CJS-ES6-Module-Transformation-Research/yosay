@@ -1,6 +1,6 @@
-const pkg = require('./package.json');
-const yosay = require('./index.js');
-var _taketalk = require('taketalk');
+import pkg from './package.json.cjs';
+import yosay from './index.js';
+import _taketalk from 'taketalk';
 _taketalk({
     init(input, options) {
         console.log(yosay(input, options));

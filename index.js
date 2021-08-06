@@ -1,11 +1,12 @@
-const chalk = require('chalk');
-const pad = require('pad-component');
-const wrap = require('wrap-ansi');
-const stringWidth = require('string-width');
-const stripAnsi = require('strip-ansi');
-const ansiStyles = require('ansi-styles');
-var _ansi_regex = require('ansi-regex');
-const cliBoxes = require('cli-boxes');
+import chalk from 'chalk';
+import pad from 'pad-component';
+import wrap from 'wrap-ansi';
+import stringWidth from 'string-width';
+import stripAnsi from 'strip-ansi';
+import ansiStyles from 'ansi-styles';
+import _ansi_regex from 'ansi-regex';
+import cliBoxes from 'cli-boxes';
+var defaultExport = {};
 var __exports;
 const ansiRegex = _ansi_regex();
 const border = cliBoxes.round;
@@ -114,4 +115,5 @@ __exports = (message, options) => {
         return greeting;
     }, defaultGreeting.split(/\n/)).join('\n') + '\n';
 };
-module.exports = __exports;
+defaultExport = __exports;
+export default defaultExport;

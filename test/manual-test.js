@@ -1,5 +1,5 @@
-const chalk = require('chalk');
-const yosay = require('../index.js');
+import chalk from 'chalk';
+import yosay from '../index.js';
 console.log(yosay('Hello, and welcome to my fantastic generator full of whimsy and bubble gum!'));
 console.log(yosay('Hi'));
 console.log(yosay('Welcome to Yeoman, ladies and gentlemen!'));
